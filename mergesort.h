@@ -20,9 +20,10 @@ int merge(int *A, int p, int q, int r)
   subvetor1[tam1] = 100;
   subvetor2[tam2] = 100;
 
-  int j,k;
+  int j,k, cont;
   j = 0;
   i = 0;
+  cont = 0;
 
   for (k=p; k<=r; ++k)
   {
@@ -30,25 +31,28 @@ int merge(int *A, int p, int q, int r)
     {
       A[k] = subvetor1[i];
       ++i;
+      ++cont;
     }
     else if (subvetor1[i] > subvetor2[j])
     {
       A[k] = subvetor2[j];
       ++j;
+      ++cont;
     }
   }
 
-  return 0;
+  return cont;
 }
-int merge_sort(int *A, int p, int r)
+int mergesort(int *A, int p, int r)
 {
+  int compara=0;
   if (p < r)
   {
     int q = (p + r ) / 2;
     merge_sort(A, p, q);
     merge_sort(A, q+1, r);
-    merge(A, p, q, r);
+    compara=merge(A, p, q, r);
   }
 
-  return 0;
+  return compara;
 }
