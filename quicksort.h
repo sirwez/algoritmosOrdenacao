@@ -21,7 +21,7 @@ int partition(int *A, int p, int r){
 	return i + 1;
 }
 
-void quick_sort(int *A, int p, int r){
+void quicksort(int *A, int p, int r){
 	if(p < r){
 		int q = partition(A,p,r);
 		quick_sort(A,p, q - 1);
