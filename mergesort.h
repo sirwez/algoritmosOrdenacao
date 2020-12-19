@@ -49,8 +49,8 @@ int mergesort(int *A, int p, int r)
   if (p < r)
   {
     int q = (p + r ) / 2;
-    merge_sort(A, p, q);
-    merge_sort(A, q+1, r);
+    mergesort(A, p, q);
+    mergesort(A, q+1, r);
     compara=merge(A, p, q, r);
   }
 
