@@ -23,11 +23,11 @@ int partition(int *A, int p, int r){
 	return i + 1;
 }
 
-int quick_sort(int *A, int p, int r){
+int quicksort(int *A, int p, int r){
 	if(p < r){
 		int q = partition(A,p,r);
-		quick_sort(A,p, q - 1);
-		quick_sort(A,q + 1,r);
+		quicksort(A,p, q - 1);
+		quicksort(A,q + 1,r);
 	}
 	
 	return comp;
