@@ -4,6 +4,8 @@
 #include <stdbool.h>
 // Algoritmos de Ordenação
 #include "bubblesort.h"
+#include "mergesort.h"
+#include "quicksort.h"
 
 //------------------------------------------------------------------------//
 //         Implementação e Comparação de Algoritmos de Ordenação
@@ -240,13 +242,13 @@ int ordena(int *vetor, int tamanho, int tipoOrdenacao)
         //return insertionsort(vetor);
         break;
     case 2:
-        //return mergesort(vetor);
+        return mergesort(vetor, 0, tamanho);
         break;
     case 3:
         //return heapsort(vetor);
         break;
     case 4:
-        //return quicksort(vetor);
+        return quicksort(vetor, 0, tamanho-1);
         break;
     }
 
