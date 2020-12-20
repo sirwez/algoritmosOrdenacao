@@ -6,11 +6,12 @@
 #include "bubblesort.h"
 #include "mergesort.h"
 #include "quicksort.h"
+#include "insertionsort.h"
 
 //------------------------------------------------------------------------//
 //         Implementação e Comparação de Algoritmos de Ordenação
 //
-//      Alunos: Ismael Assunção Costa, Leandro Oliveria, Weslley
+//      Alunos: Ismael Assunção Costa, Leandro Oliveira, Weslley
 //
 //      Este programa possui 2 modos de execução: Teste e simulação
 //
@@ -239,7 +240,7 @@ int ordena(int *vetor, int tamanho, int tipoOrdenacao)
     case 0:
         return bubblesort(vetor, tamanho);
     case 1:
-        //return insertionsort(vetor);
+        return insertionsort(vetor, tamanho);
         break;
     case 2:
         return mergesort(vetor, 0, tamanho);
