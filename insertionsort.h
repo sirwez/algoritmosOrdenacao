@@ -1,4 +1,4 @@
-int insertionSort(int lista[], int tamanho)  
+int insertionsort(int lista[], int tamanho)  
 {  
     int i, j, m, comparacoes=0;
 	  
