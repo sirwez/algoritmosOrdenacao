@@ -91,7 +91,9 @@ void main(int argc, char *argv[])
     char *algoritmosOrdenacao[] = {"BUBBLESORT", "INSERTIONSORT", "MERGESORT", "HEAPSORT", "QUICKSORT"};
 
     //3 tipos de ordenação
-    for (int i = 0; i < 3; i++)
+    int i;
+    
+    for (i = 0; i < 3; i++)
     {
         char tipoOrdenacao[15];
 
@@ -113,8 +115,10 @@ void main(int argc, char *argv[])
         printf("Ordenacao: %s, ", tipoOrdenacao);
         if (imprimirVetor)
             fprintf(arquivoVetores, "Ordenação: %s\n", tipoOrdenacao);
+        
+	    int j;
 
-        for (int j = 0; j < 5; j++)
+        for (j = 0; j < 5; j++)
         {
             fprintf(arquivoTempo, "%s,", algoritmosOrdenacao[j]);
             fprintf(arquivoTempo, "REPETICAO 1, REPETICAO 2, REPETICAO 3\n");
@@ -126,15 +130,19 @@ void main(int argc, char *argv[])
                 fprintf(arquivoVetores, "Algoritmo: %s\n", algoritmosOrdenacao[j]);
 
             // Para cada vetor de tamanho diferente
-            for (int k = 0; k < quantidadeVetores; k++)
+            int k;
+            
+            for (k = 0; k < quantidadeVetores; k++)
             {
                 fprintf(arquivoTempo, "%i,", tamanhoVetores[k]);
                 fprintf(arquivoComparacoes, "%i,", tamanhoVetores[k]);
                 printf("Tamanho do Vetor: %i\n", tamanhoVetores[k]);
                 if (imprimirVetor)
                     fprintf(arquivoVetores, "Tamanho do Vetor: %i\n", tamanhoVetores[k]);
+                
+                int l;
 
-                for (int l = 0; l < 3; l++)
+                for (l = 0; l < 3; l++)
                 {
                     printf("Repetição: %i\n", l);
                     if (imprimirVetor)
@@ -148,7 +156,10 @@ void main(int argc, char *argv[])
                     if (imprimirVetor)
                     {
                         fprintf(arquivoVetores, "Vetor inicial: \n[");
-                        for (int m = 0; m < tamanhoVetores[k]; m++)
+                        
+                        int m;
+                        
+                        for (m = 0; m < tamanhoVetores[k]; m++)
                         {
                             fprintf(arquivoVetores, "%i ", vetor[m]);
                         }
@@ -165,7 +176,10 @@ void main(int argc, char *argv[])
                     if (imprimirVetor)
                     {
                         fprintf(arquivoVetores, "Vetor ordenado: \n[");
-                        for (int m = 0; m < tamanhoVetores[k]; m++)
+                        
+                        int m;
+                        
+                        for (m = 0; m < tamanhoVetores[k]; m++)
                         {
                             fprintf(arquivoVetores, "%i ", vetor[m]);
                         }
@@ -197,7 +211,9 @@ void main(int argc, char *argv[])
 
 void vetorCrescente(int vetor[], int tamanho)
 {
-    for (int i = 0; i < tamanho; i++)
+	int i;
+	
+    for (i = 0; i < tamanho; i++)
     {
         vetor[i] = i;
     }
@@ -205,7 +221,9 @@ void vetorCrescente(int vetor[], int tamanho)
 
 void vetorDecrescente(int vetor[], int tamanho)
 {
-    for (int i = 0; i < tamanho; i++)
+	int i;
+	
+    for (i = 0; i < tamanho; i++)
     {
         vetor[i] = tamanho - i - 1;
     }
@@ -213,7 +231,9 @@ void vetorDecrescente(int vetor[], int tamanho)
 
 void vetorAleatorio(int vetor[], int tamanho)
 {
-    for (int i = 0; i < tamanho; i++)
+	int i;
+	
+    for (i = 0; i < tamanho; i++)
     {
         vetor[i] = rand() % 100;
     }
