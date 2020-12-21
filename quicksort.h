@@ -13,8 +13,8 @@ int partition(int *A, int p, int r){
 			int aux = A[i];
 			A[i] = A[j];
 			A[j] = aux;
-			comp++;
 		}
+	comp++;
 	}
 
 	A[r] = A[i + 1];
@@ -24,11 +24,15 @@ int partition(int *A, int p, int r){
 }
 
 int quicksort(int *A, int p, int r){
-	if(p < r){
+	while(p < r){
 		int q = partition(A,p,r);
+		if(q - p < r - q){		
 		quicksort(A,p, q - 1);
+		p=q+1;
+		} else {
 		quicksort(A,q + 1,r);
+	        r=q-1;
+		}
 	}
-	
 	return comp;
 }
