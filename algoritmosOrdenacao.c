@@ -171,7 +171,7 @@ void main(int argc, char *argv[])
                     t = clock();
                     //j é o tipo de algoritmo de ordenação a ser aplicada no vetor
                     comparacoes = ordena(vetor, tamanhoVetores[k], j);
-
+		    t = clock() - t;
                     // O vetor já ordernado será impresso no txt a fim de comparar com o vetor original
                     if (imprimirVetor)
                     {
