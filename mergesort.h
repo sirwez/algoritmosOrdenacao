@@ -31,14 +31,13 @@ int merge(int *A, int p, int q, int r)
     {
       A[k] = subvetor1[i];
       ++i;
-      ++cont;
     }
     else if (subvetor1[i] > subvetor2[j])
     {
       A[k] = subvetor2[j];
       ++j;
-      ++cont;
     }
+    cont++;
   }
 
   return cont;
