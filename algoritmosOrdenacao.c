@@ -7,6 +7,7 @@
 #include "mergesort.h"
 #include "quicksort.h"
 #include "insertionsort.h"
+#include "heapsort.h"
 
 //------------------------------------------------------------------------//
 //         Implementação e Comparação de Algoritmos de Ordenação
@@ -266,12 +267,12 @@ int ordena(int *vetor, int tamanho, int tipoOrdenacao)
         return mergesort(vetor, 0, tamanho);
         break;
     case 3:
-        //return heapsort(vetor);
+        return heapsort(vetor, tamanho);
         break;
     case 4:
         return quicksort(vetor, 0, tamanho-1);
         break;
     }
-
+    
     return 0;
 }
