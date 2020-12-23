@@ -1,18 +1,19 @@
-int bubblesort(int list[], int n)
+int bubblesort(int a[], int n)
 {
-  int c, d, t;
+  int i, j, aux;
   int comparacoes = 0;
 
-  for (c = 0; c < n - 1; c++)
+  for (i = 0; i < n - 1; i++)
   {
-    for (d = 0; d < n - c - 1; d++)
+    for (j = n - 1; j >= i + 1; j--)
     {
-      if (list[d] > list[d + 1])
+      comparacoes++;
+
+      if (a[j] < a[j - 1])
       {
-        t = list[d];
-        list[d] = list[d + 1];
-        list[d + 1] = t;
-        comparacoes++;
+        aux = a[j];
+        a[j] = a[j - 1];
+        a[j - 1] = aux;
       }
     }
   }
