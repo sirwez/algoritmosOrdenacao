@@ -7,11 +7,12 @@ int insertionsort(int lista[], int tamanho)
         m = lista[i];  
         j = i - 1;  
         
+	comparacoes++;
         while (j >= 0 && lista[j] > m) 
         {  
             lista[j + 1] = lista[j];  
             j = j - 1;
-			comparacoes++;  
+	comparacoes++;  
         }  
         lista[j + 1] = m;  
     } 
