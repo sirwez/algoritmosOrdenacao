@@ -1,6 +1,6 @@
 #         Implementação e Comparação de Algoritmos de Ordenação
 
-      Alunos: Ismael Assunção Costa, Leandro Oliveria, Weslley
+      Alunos: Ismael Assunção Costa, Leandro Oliveira da Silva, Weslley de Aquino Ferreira
 
       Este programa possui 2 modos de execução: Teste e simulação
 
