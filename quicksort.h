@@ -4,23 +4,23 @@
 int comp=0;
 int partition(int *A, int p, int r){
 	int i, j;
-	i = p - 1;
+	i = p;
 	int x = A[r];
 	
 	for(j = p; j < r; j++){
 		if(A[j] <= x){
-			i++;
 			int aux = A[i];
 			A[i] = A[j];
 			A[j] = aux;
+			i++;
 		}
 	comp++;
 	}
 
-	A[r] = A[i + 1];
-	A[i + 1] = x;
+	A[r] = A[i];
+	A[i] = x;
 	
-	return i + 1;
+	return i;
 }
 
 int quicksort(int *A, int p, int r){
