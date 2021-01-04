@@ -1,6 +1,7 @@
-int insertionsort(int lista[], int tamanho)  
+long insertionsort(int lista[], int tamanho)  
 {  
-    int i, j, m, comparacoes=0;
+    int i, j, m;
+    long comparacoes=0;
 	  
     for (i = 1; i < tamanho; i++) 
     {  
