@@ -167,7 +167,7 @@ void main(int argc, char *argv[])
                         fprintf(arquivoVetores, "]\n");
                     }
 
-                    int comparacoes;
+                    long comparacoes;
                     clock_t t;
                     t = clock();
                     //j é o tipo de algoritmo de ordenação a ser aplicada no vetor
@@ -188,7 +188,7 @@ void main(int argc, char *argv[])
                     }
 
                     fprintf(arquivoTempo, "%lf,", ((double)t) / ((CLOCKS_PER_SEC / 1000)));
-                    fprintf(arquivoComparacoes, "%i,", comparacoes);
+                    fprintf(arquivoComparacoes, "%ld,", comparacoes);
 
                     if (l == 2)
                     {
@@ -254,7 +254,7 @@ void geraVetor(int ordem, int vetor[], int tamanho)
 }
 
 //Ordena o vetor e retorna o número de comparações feitas para ordenar
-int ordena(int *vetor, int tamanho, int tipoOrdenacao)
+long ordena(int *vetor, int tamanho, int tipoOrdenacao)
 {
     switch (tipoOrdenacao)
     {
