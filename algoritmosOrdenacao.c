@@ -44,7 +44,7 @@ void geraVetor(int, int *, int);
 void vetorCrescente(int *, int);
 void vetorDecrescente(int *, int);
 void vetorAleatorio(int *, int);
-int ordena(int *, int, int);
+long ordena(int *, int, int);
 
 void main(int argc, char *argv[])
 {
