@@ -1,7 +1,7 @@
- int heapsort(int heap[], int no) 
+ long heapsort(int heap[], int no) 
  {
  	int i, j, root, c, temp;
- 	int comparacoes=0;
+ 	long comparacoes=0;
  	
  	for (i = 1; i < no; i++)
     {
