@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int comp=0;
+long comp=0;
 int partition(int *A, int p, int r){
 	int i, j;
 	i = p;
@@ -23,7 +23,7 @@ int partition(int *A, int p, int r){
 	return i;
 }
 
-int quicksort(int *A, int p, int r){
+long quicksort(int *A, int p, int r){
 	while(p < r){
 		int q = partition(A,p,r);
 		if(q - p < r - q){		
