@@ -1,7 +1,7 @@
-int bubblesort(int a[], int n)
+long bubblesort(int a[], int n)
 {
   int i, j, aux;
-  int comparacoes = 0;
+  long comparacoes = 0;
 
   for (i = 0; i < n - 1; i++)
   {
