@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int merge(int *A, int p, int q, int r)
+long merge(int *A, int p, int q, int r)
 {
   int tam1 = q - p + 1;
   int tam2 = r - q;
@@ -47,7 +47,7 @@ int merge(int *A, int p, int q, int r)
 }
 int mergesort(int *A, int p, int r)
 {
-  int compara=0;
+  long compara=0;
   if (p < r)
   {
     int q = (p + r ) / 2;
