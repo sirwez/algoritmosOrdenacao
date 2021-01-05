@@ -1,47 +1,46 @@
- long heapsort(int heap[], int no) 
- {
- 	int i, j, root, c, temp;
- 	long comparacoes=0;
- 	
- 	for (i = 1; i < no; i++)
-    {
-        c = i;
-        do
-        {
-            root = (c - 1) / 2;             
-            if (heap[root] < heap[c])  
-            {
-                temp = heap[root];
-                heap[root] = heap[c];
-                heap[c] = temp;
-            }
-            c = root;
-        } while (c != 0);
-    }
+int compar =0;
+
+void rearrange(int A[], int i, int tam){
+	int esq = i * 2 + 1;
+	int dir = i * 2 + 2;
+	int maior = i;
+	int aux;
+	
+	compar++;
+	if (esq < tam && A[esq] > A[maior]){
+		maior = esq;
+		
+	}
+	compar++;	   
+	if (dir < tam && A[dir] > A[maior]) {
+		maior = dir;
+		
+	}
+	compar++;
+	if (maior != i ){
+		aux = A[i];
+		A[i] = A[maior];
+		A[maior] = aux;   
+		rearrange(A,maior, tam);
+	}
+}
+
+int buildHeap (int *val, int tam) {
+	int i;
+	
+	int aux;
+	
+	while(tam > 0){
+		for ( i = (tam -1)/2; i >= 0; i= i-1) {
+	  		rearrange(val, i, tam);
+		}
+		aux = val[tam-1];
+		val[tam-1] = val[0];
+		val[0] = aux;	
+		tam--;
+		compar++;
+	}
+	compar++;
  
-    for (j = no - 1; j >= 0; j--)
-    {
-        temp = heap[0];
-        heap[0] = heap[j];   
-        heap[j] = temp;
-        root = 0;
-        do 
-        {
-            c = 2 * root + 1;    
-            if ((heap[c] < heap[c + 1]) && c < j-1)
-                c++;
-            if (heap[root]<heap[c] && c<j)   
-            {
-                temp = heap[root];
-                heap[root] = heap[c];
-                heap[c] = temp;
-            }
-            root = c;
-            comparacoes++;
-        } while (c < j);
-    } 
-    return comparacoes;
- }
- 
-    
-    
+ return compar;
+}
