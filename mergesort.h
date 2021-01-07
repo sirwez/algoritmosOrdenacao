@@ -1,60 +1,34 @@
-#include <stdio.h>
+void merge(int *array_of_integers, int p, int q, int r) {
+    int n1 = q - p + 1;
+    int n2 = r - q; 
+    int i, j, k;
+    int left_array[n1 + 1];
+    int right_array[n2 + 1];
 
-long merge(int *A, int p, int q, int r)
-{
-  int tam1 = q - p + 1;
-  int tam2 = r - q;
+    for (i = 0; i < n1; i++)
+        left_array[i] = array_of_integers[p + i];
+    for (j = 0; j < n2; j++)
+        right_array[j] = array_of_integers[q + j];
 
-  int subvetor1[tam1];
-  int subvetor2[tam2];
+    i = 0;
+    j = 0;
 
-  int i;
-  for (i=0; i<tam1; ++i)
-  {
-    subvetor1[i] = A[p + i];
-  }
-  for (i=0; i<tam2; ++i)
-  {
-    subvetor2[i] = A[q + 1 + i];
-  }
-  subvetor1[tam1] = 100;
-  subvetor2[tam2] = 100;
-
-  int j,k, cont;
-  j = 0;
-  i = 0;
-  cont = 0;
-
-  for (k=p; k<=r; ++k)
-  {
-    if (subvetor1[i] <= subvetor2[j])
-    {
-      A[k] = subvetor1[i];
-      ++i;
+    for (k = p; k < r; k++){
+        if (left_array[i] <= right_array[j]) {
+            array_of_integers[k] = left_array[i];
+            i++;
+        } else {
+            array_of_integers[k] = right_array[j];
+            j++;
+        }   
     }
-    else {
-    cont++;
-    if (subvetor1[i] > subvetor2[j])
-    {
-      A[k] = subvetor2[j];
-      ++j;
-    }
-    }
-    cont++;
-  }
-
-  return cont;
 }
-int mergesort(int *A, int p, int r)
-{
-  long compara=0;
-  if (p < r)
-  {
-    int q = (p + r ) / 2;
-    mergesort(A, p, q);
-    mergesort(A, q+1, r);
-    compara=merge(A, p, q, r);
-  }
 
-  return compara;
+void merge_sort(int *array_of_integers, int p, int r) {
+    if (p < r) {
+        int q = (p + r) / 2;
+        merge_sort(array_of_integers, p, q);
+        merge_sort(array_of_integers, q + 1, r);
+        merge(array_of_integers, p, q, r);
+    }
 }
